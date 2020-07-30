@@ -4,6 +4,7 @@ import Room from "../components/Room"
 
 let sub
 
+// individual chat rooms between two users
 export default function RoomPage(props) {
   let { cable } = props
   let { id } = props.match.params
@@ -15,6 +16,7 @@ export default function RoomPage(props) {
     getInitialRoomPosts()
   }, [])
 
+  // tells posts which room to post in
   const handleRecievePost = async () => {
     let singleRoomWithDetailsResponse = await getRoomWithDetail(id)
     // Room id and user id are aligned
@@ -23,6 +25,7 @@ export default function RoomPage(props) {
     setUser(newUser)
   }
 
+  // get existing posts for specific room, received = new posts
   const getInitialRoomPosts = async () => {
     sub = cable.subscriptions.create(
       { channel: "RoomChannel", room: id },

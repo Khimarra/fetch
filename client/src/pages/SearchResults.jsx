@@ -3,6 +3,7 @@ import React from "react"
 import UserCard from "../components/UserCard"
 import { Link } from "react-router-dom"
 
+// user list based on search
 export default function SearchResults(props) {
   return (
     <div className="">
