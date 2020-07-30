@@ -29,7 +29,7 @@ const App = (props) => {
 
   return (
     <div className="iphone-size bg-white min-h-screen">
-      {/* Don't add padding bottom 32 if you are on the login route */}
+      {/* Don't add padding bottom 32 if you are on the login route because there is no nav */}
       <div className={locationLoginTrue ? "" : "pb-32"}>
         <Switch>
           <Route

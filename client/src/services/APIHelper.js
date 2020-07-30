@@ -8,6 +8,7 @@ const apiUrls = {
   development: "http://localhost:3000/",
 }
 
+// ws = websocket. used for action cable
 const wsUrls = {
   production: "wss://mysterious-anchorage-39512.herokuapp.com/cable",
   development: "ws://localhost:3000/cable",
@@ -25,6 +26,10 @@ const api = axios.create({
   baseURL: apiUrl,
 })
 
+// using email for fake auth.
+// determines if user with specific email exists
+// if so, logs in as that user
+// if not, the form resets
 export const getUserByEmail = async (email) => {
   try {
     const userList = await api.get("/users")
@@ -86,6 +91,7 @@ export const getUserById = async (user_id) => {
   }
 }
 
+// API call to get users based on search query
 export const getUsersByFieldAndQuery = async (searchType, query) => {
   query = query.toLowerCase()
   searchType = searchType.toLowerCase()
@@ -132,6 +138,8 @@ export const getTeamWithDetail = async (id) => {
   }
 }
 
+// gets all users except the one logged in 
+// so no one appears in their own search
 export const getManyUsersById = async (userIds) => {
   try {
     const users = await getAllUsers()
