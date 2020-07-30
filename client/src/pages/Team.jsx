@@ -5,6 +5,7 @@ import UserList from "../components/UserList"
 import DOGBG from "../assets/Images/Team dog background.png"
 import DOG from "../assets/Images/DOG FETCH 1.gif"
 
+// team page - display's department name and team members with manager first
 export default function Team(props) {
   let { id } = props.match.params
 
@@ -15,6 +16,7 @@ export default function Team(props) {
     getTeamDetails()
   }, [])
 
+  // grabs list of user ids as x... already using userIds variable in useState
   const getTeamDetails = async () => {
     let teamWithDetailsResponse = await getTeamWithDetail(id)
     setTeamDetail(teamWithDetailsResponse)

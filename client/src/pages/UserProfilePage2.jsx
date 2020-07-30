@@ -9,6 +9,7 @@ import Bio from "../components/Bio"
 import Interests from "../components/Interests"
 import SocialActivity from "../components/SocialActivity"
 
+// user's bio, interests, and social feed
 export default function UserProfilePage2(props) {
   // pull user's id from props
   const userId = props.match.params.id

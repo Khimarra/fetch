@@ -5,6 +5,7 @@ import { useSwipeable } from "react-swipeable"
 import ProfileNav from "../components/ProfileNav"
 import { getUserById } from "../services/APIHelper"
 
+// essence page
 export default function UserProfilePage4(props) {
   // pull user's id from props
   const userId = props.match.params.id

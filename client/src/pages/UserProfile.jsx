@@ -8,6 +8,7 @@ import Status from "../components/Status"
 import Contact from "../components/Contact"
 import ProfileNav from "../components/ProfileNav"
 
+// user's contact info and status
 export default function UserProfile(props) {
   // pull user's id from props
   const userId = props.match.params.id

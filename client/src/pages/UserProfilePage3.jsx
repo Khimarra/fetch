@@ -7,6 +7,7 @@ import { getUserById } from "../services/APIHelper"
 import Avatar from "../components/Avatar"
 import Pics from "../components/Pics"
 
+// user's pictures
 export default function UserProfilePage3(props) {
   // pull user's id from props
   const userId = props.match.params.id
