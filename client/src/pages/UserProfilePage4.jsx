@@ -6,6 +6,7 @@ import ProfileNav from "../components/ProfileNav"
 import { getUserById } from "../services/APIHelper"
 
 export default function UserProfilePage4(props) {
+  // pull user's id from props
   const userId = props.match.params.id
 
   const [user, setUser] = useState([])
@@ -19,6 +20,8 @@ export default function UserProfilePage4(props) {
     setUser(res)
   }
 
+  // useHistory retains data for userId returned from page3
+  // swipeable uses that history to push userId into URL when page4 is accessed
   const history = useHistory()
   const handlers = useSwipeable({
     onSwipedRight: () => history.push(`/users/${userId}/page3`),
