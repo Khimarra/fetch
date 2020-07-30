@@ -8,7 +8,9 @@ import Status from "../components/Status"
 import Contact from "../components/Contact"
 import ProfileNav from "../components/ProfileNav"
 
+// user's contact info and status
 export default function UserProfile(props) {
+  // pull user's id from props
   const userId = props.match.params.id
 
   const [user, setUser] = useState(null)
@@ -22,6 +24,8 @@ export default function UserProfile(props) {
     setUser(res)
   }
 
+  // useHistory retains data for userId returned from page2
+  // swipeable uses that history to push userId into URL when page1 is accessed
   const history = useHistory()
   const handlers = useSwipeable({
     onSwipedLeft: () => history.push(`/users/${userId}/page2`),

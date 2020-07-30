@@ -9,7 +9,9 @@ import Bio from "../components/Bio"
 import Interests from "../components/Interests"
 import SocialActivity from "../components/SocialActivity"
 
+// user's bio, interests, and social feed
 export default function UserProfilePage2(props) {
+  // pull user's id from props
   const userId = props.match.params.id
 
   const [user, setUser] = useState([])
@@ -23,6 +25,8 @@ export default function UserProfilePage2(props) {
     setUser(res)
   }
 
+  // useHistory retains data for userId returned from page1 or page3
+  // swipeable uses that history to push userId into URL when page2 is accessed
   const history = useHistory()
   const handlers = useSwipeable({
     onSwipedLeft: () => history.push(`/users/${userId}/page3`),

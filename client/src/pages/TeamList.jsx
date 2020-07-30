@@ -8,6 +8,7 @@ import DotLink from "../components/DotLink"
 import DOGBG from "../assets/Images/Department dog background small.png"
 import DOG from "../assets/Images/DOG FETCH 2.gif"
 
+// list of teams with list of managers below
 export default function TeamList() {
   const [teamList, setTeamList] = useState([])
 

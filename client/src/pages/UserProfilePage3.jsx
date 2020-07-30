@@ -7,7 +7,9 @@ import { getUserById } from "../services/APIHelper"
 import Avatar from "../components/Avatar"
 import Pics from "../components/Pics"
 
+// user's pictures
 export default function UserProfilePage3(props) {
+  // pull user's id from props
   const userId = props.match.params.id
 
   const [user, setUser] = useState([])
@@ -21,6 +23,8 @@ export default function UserProfilePage3(props) {
     setUser(res)
   }
 
+  // useHistory retains data for userId returned from page2 or page4
+  // swipeable uses that history to push userId into URL when page3 is accessed
   const history = useHistory()
   const handlers = useSwipeable({
     onSwipedLeft: () => history.push(`/users/${userId}/page4`),
