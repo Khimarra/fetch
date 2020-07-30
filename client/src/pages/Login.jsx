@@ -5,6 +5,7 @@ import { getUserByEmail } from "../services/APIHelper.js"
 import DataDogLogo from "../assets/Icons/DD_white.png"
 import Tap from "react-interactions"
 
+// initial login screen
 export default function Login(props) {
   const history = useHistory()
 
@@ -15,6 +16,9 @@ export default function Login(props) {
       </div>
 
       <Formik
+        // hard-coded email and password so people can check out our app
+        // there's no real auth, anyway
+        // password isn't even necessary, only checks for a user with specific email
         initialValues={{ email: "sam@company.com", password: "password" }}
         onSubmit={async (values, actions) => {
           const userId = await getUserByEmail(values.email)
